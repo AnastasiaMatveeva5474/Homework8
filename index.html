@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Розовый скетчбук: математика, рисование и форма обратной связи.">
+    <title>Розовый скетчбук — математика и рисование</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <main class="page">
+        <section class="hero">
+            <svg class="curve" viewBox="0 0 200 200" aria-hidden="true">
+                <path d="M100 100 m0 0 C100 40 160 40 160 100 C160 160 100 160 100 100 C100 70 130 70 130 100 C130 120 100 120 100 100"
+                    fill="none" stroke="#e0457b" stroke-width="3" stroke-linecap="round"/>
+                <path d="M20 150 Q50 90 80 150 T140 150 T200 150" fill="none" stroke="#f08bb1"
+                    stroke-width="3" stroke-linecap="round" stroke-dasharray="2 8"/>
+                <circle cx="40" cy="40" r="10" fill="#ffc2d9"/>
+                <circle cx="170" cy="30" r="6" fill="#f08bb1"/>
+            </svg>
+            <h1>Розовый скетчбук</h1>
+            <p class="lead">Рисую карандашом и считаю функциями. Учусь на «Компьютерных технологиях и прикладной математике» в КубГУ.</p>
+            <button type="button" id="open-form" class="btn">Написать мне</button>
+        </section>
+
+        <section class="notes" aria-label="Обо мне">
+            <article class="note">
+                <h2>Рисунок</h2>
+                <p>Скетчи, портреты и цветочные орнаменты. Любимый материал — графитный карандаш.</p>
+            </article>
+            <article class="note">
+                <h2>Математика</h2>
+                <p>Графики, кривые и алгоритмы. Красивая формула для меня почти как красивый рисунок.</p>
+            </article>
+            <article class="note">
+                <h2>Веб</h2>
+                <p>Учусь делать интерфейсы, которые удобно открывать и на компьютере, и на смартфоне.</p>
+            </article>
+        </section>
+    </main>
+
+    <dialog id="feedback-dialog" aria-labelledby="form-title">
+        <div class="sheet">
+            <button type="button" id="close-form" class="close" aria-label="Закрыть форму">&times;</button>
+            <h2 id="form-title">Напишите мне</h2>
+            <form id="feedback-form" novalidate>
+                <label for="name">ФИО</label>
+                <input id="name" name="name" type="text" autocomplete="name" required>
+
+                <div class="row">
+                    <div>
+                        <label for="email">Email</label>
+                        <input id="email" name="email" type="email" autocomplete="email" required>
+                    </div>
+                    <div>
+                        <label for="phone">Телефон</label>
+                        <input id="phone" name="phone" type="tel" autocomplete="tel" minlength="7" maxlength="20" required>
+                    </div>
+                </div>
+
+                <label for="organization">Организация</label>
+                <input id="organization" name="organization" type="text" autocomplete="organization">
+
+                <label for="message">Сообщение</label>
+                <textarea id="message" name="message" rows="3" required></textarea>
+
+                <label class="agree" for="agree">
+                    <input id="agree" name="agree" type="checkbox" required>
+                    <span>Согласен(на) с политикой обработки персональных данных</span>
+                </label>
+
+                <button type="submit" id="submit-btn" class="btn">Отправить</button>
+                <p id="status" class="status" role="status"></p>
+            </form>
+        </div>
+    </dialog>
+</body>
+</html>
